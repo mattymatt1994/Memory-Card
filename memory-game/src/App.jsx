@@ -1,29 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import CardGame from './cards/cards.jsx';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-      <CardGame/>
-    </div>
-    
-  );
-  
+import CardGame from "./components/components.cards.jsx";
+import Top from "./components/components.top.jsx";
+import { Component } from "react";
+class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentScore: 0,
+      bestScore: 0,
+    };
+  }
+  render() {
+    const { currentScore, bestScore } = this.state;
+    return (
+      <div className="App">
+        <header className="App-header"></header>
+        <CardGame />
+        <Top currentScore={currentScore} bestScore={bestScore}/>
+      </div>
+    );
+  }
 }
 
 export default App;

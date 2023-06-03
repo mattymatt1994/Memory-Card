@@ -7,6 +7,7 @@ class CardGame extends Component {
     this.state = {
       cards: ["AH","KH","QH","AD","KD","QD","AS","KS","QS","AC","KC","QC"],
       text: "",
+     
     };
     this.onSubmit = this.onSubmit.bind(this);
   }
@@ -19,6 +20,7 @@ class CardGame extends Component {
   }
 
   render() {
+    const {currentScore, bestScore} = this.state;
     return (
       <div>
         <h1>Who wants to play a game of cards?</h1>
